@@ -13,7 +13,7 @@
     <div th:each="el : ${principale}" class="alert alert-info mt-2">
         <p> <b>Numar comanda: </b><span th:text="${el.ID_COMANDA}"/></p>
         <p> <b>Numar articol: </b><span th:text="${el.ID_ARTICOL}"/></p>
-        <a th:href="'/Principala/' + ${el.ID_COMANDA}">Detaliat</a>
+        <a th:href="'/Principala/' + ${el.ID_COMANDA}" class="btn btn-warning" >Detaliat</a>
 
 
     </div>

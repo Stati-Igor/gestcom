@@ -48,4 +48,23 @@ public class ArticoleController {
         model.addAttribute("articole",res);
         return "InfoArticol";
     }
+    @GetMapping("/Articole/{id}/edit")
+    public String ArticolEdit(@PathVariable(value = "id") long id, Model model) {
+        if(!articolRepository.existsById(id)){
+            return "redirect:/Articole";
+        }
+        Optional<articole> articol = articolRepository.findById(id);
+        ArrayList<articole> res = new ArrayList<>();
+        articol.ifPresent(res::add);
+        model.addAttribute("articole",res);
+        return "EditArticol";
+    }
+    @PostMapping("/Articole/{id}/edit")
+    public String ArtUpdate(@PathVariable(value = "id") long id, @RequestParam String Nume_articol,@RequestParam String Cod_machet, Model model) {
+        articole articol= articolRepository.findById(id).orElseThrow();
+        articol.setNume_articol(Nume_articol);
+        articol.setCod_machet(Cod_machet);
+        articolRepository.save(articol);
+        return "redirect:/Articole";
+    }
 }

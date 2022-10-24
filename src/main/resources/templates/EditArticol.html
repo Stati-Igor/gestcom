@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editare articol</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="Blocks/header :: header"></header>
+<div class="container mt-5 mb-5" >
+    <h1>Editare articol</h1>
+    <div th:each="el : ${articole}">
+        <form method="post">
+            <input type="text" th:value="${el.Nume_articol}" name="Nume_articol" placeholder="Nume articol" class="form-control"><br>
+            <input type="text" th:value="${el.Cod_machet}" name="Cod_machet" placeholder="Cod machet" class="form-control"><br>
+            <button type="submit" class="btn btn-success">Actualizeaza</button>
+        </form>
+    </div>
+</div>
+<div th:insert="Blocks/footer :: footer"></div>
+</body>
+<style type="text/css">
+    body{
+        margin: 10px;
+    }
+</style>
+</html>

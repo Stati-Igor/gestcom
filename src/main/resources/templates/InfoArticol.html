@@ -13,9 +13,7 @@
         <h1 th:text="${el.Nume_articol}"/>
         <p> <b>Cod machet: </b><span th:text="${el.Cod_machet}"/></p>
         <a th:href="'/Articole/' + ${el.ARTICOL_ID}+ '/edit'" class="btn btn-warning">Redactare</a><br><br>
-        <form th:action="'/Articole/' + ${el.ARTICOL_ID}+ '/delete'" method="post">
-            <button class="btn btn-warning" type="submit">Stergere</button>
-        </form>
+
     </div>
 </div>
 <div th:insert="Blocks/footer :: footer"></div>
