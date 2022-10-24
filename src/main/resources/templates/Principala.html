@@ -11,8 +11,8 @@
     <a class="me-3 py-2 text-dark text-decoration-none" href="/Principala/AdCom">Adaugare comanda</a>
     <h1>Principala</h1>
     <div th:each="el : ${principale}" class="alert alert-info mt-2">
-        <h3 th:text="${el.ID_COMANDA }"/>
-        <h3 th:text="${el.ID_ARTICOL }"/>
+        <p> <b>Numar comanda: </b><span th:text="${el.ID_COMANDA}"/></p>
+        <p> <b>Numar articol: </b><span th:text="${el.ID_ARTICOL}"/></p>
         <a th:href="'/Principala/' + ${el.ID_COMANDA}">Detaliat</a>
 
 

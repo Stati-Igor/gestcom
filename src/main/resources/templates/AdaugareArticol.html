@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Adaugare articol</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="Blocks/header :: header"></header>
+<div class="container mt-5 mb-5" >
+    <h1>Adaugare articol</h1>
+    <form action="/Articole/AdArt" method="post">
+        <input type="text" name="Nume_articol" placeholder="Introduceti numele articolului" class="form-control"><br>
+        <input type="text" name="Cod_machet" placeholder="Introduceti codul machetului" class="form-control"><br>
+        <button type="submit" class="btn btn-success">Adăugare</button>
+    </form>
+</div>
+<div th:insert="Blocks/footer :: footer"></div>
+</body>
+<style type="text/css">
+    body{
+        margin: 10px;
+    }
+</style>
+</html>

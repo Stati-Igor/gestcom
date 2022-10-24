@@ -45,9 +45,11 @@ public class articole {
 
     public articole(){
     }
-    public articole(String Nume_articol,String Cod_machet){
+    public articole(String Nume_articol, String Cod_machet, Long Cantitate_croita, Long Cantitate_cusuta, Long Cantitate_ambalata){
         this.Nume_articol=Nume_articol;
         this.Cod_machet=Cod_machet;
-
+        this.Cantitate_croita=Cantitate_croita;
+        this.Cantitate_cusuta=Cantitate_cusuta;
+        this.Cantitate_ambalata=Cantitate_ambalata;
     }
 }
