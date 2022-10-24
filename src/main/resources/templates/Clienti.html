@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Clienti</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="Blocks/header :: header"></header>
+<div class="container mt-5">
+    <a class="me-3 py-2 text-dark text-decoration-none" href="/Clienti/AdCli">Adaugare client</a>
+<h1>Clienti</h1>
+    <div th:each="el : ${clientii}" class="alert alert-info mt-2">
+
+        <h3 th:text="${el.Nume_client}"/>
+        <p th:text="${el.Telefon_client}"/>
+        <a th:href="'/Clienti/' + ${el.ID_CLIENT}" class="btn btn-warning">Detaliat</a>
+
+    </div>
+</div>
+<div th:insert="Blocks/footer :: footer"></div>
+</body>
+</html>
