@@ -1,23 +1,22 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Pagina principala</title>
+    <title>Articole</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 </head>
 <body>
 <header th:insert="Blocks/header :: header"></header>
 <div class="container mt-5">
-    <a class="me-3 py-2 text-dark text-decoration-none" href="/Principala/AdCom">Adaugare comanda</a>
-    <h1>Principala</h1>
-    <div th:each="el : ${principale}" class="alert alert-info mt-2">
-        <h3 th:text="${el.ID_COMANDA }"/>
-        <h3 th:text="${el.ID_ARTICOL }"/>
-        <a th:href="'/Principala/' + ${el.ID_COMANDA}">Detaliat</a>
-
-
+    <a class="me-3 py-2 text-dark text-decoration-none" href="/Articole/AdArt">Adaugare articol</a>
+    <h1>Articole</h1>
+    <div th:each="el : ${articole}" class="alert alert-info mt-2">
+        <h3 th:text="${el.Nume_articol}"/>
+        <a th:href="'/Articole/'+ ${el.ARTICOL_ID}">Detalii</a>
     </div>
 </div>
+
+
 <div th:insert="Blocks/footer :: footer"></div>
 </body>
 <style type="text/css">

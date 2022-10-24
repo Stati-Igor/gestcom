@@ -11,13 +11,16 @@
     <a class="me-3 py-2 text-dark text-decoration-none" href="/Clienti/AdCli">Adaugare client</a>
 <h1>Clienti</h1>
     <div th:each="el : ${clientii}" class="alert alert-info mt-2">
-
-        <h3 th:text="${el.Nume_client}"/>
-        <p th:text="${el.Telefon_client}"/>
+        <p> <b>Nume client: </b><span th:text="${el.Nume_client}"/></p>
         <a th:href="'/Clienti/' + ${el.ID_CLIENT}" class="btn btn-warning">Detaliat</a>
 
     </div>
 </div>
 <div th:insert="Blocks/footer :: footer"></div>
 </body>
+<style type="text/css">
+    body{
+        margin: 10px;
+    }
+</style>
 </html>
